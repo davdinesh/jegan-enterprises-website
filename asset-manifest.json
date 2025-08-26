@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.css": "/jegan-enterprises-website/static/css/main.129dae1d.css",
+    "main.js": "/jegan-enterprises-website/static/js/main.174fc75d.js",
+    "index.html": "/jegan-enterprises-website/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.129dae1d.css",
+    "static/js/main.174fc75d.js"
+  ]
+}
