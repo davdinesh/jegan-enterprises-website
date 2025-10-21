@@ -1,3 +1,12 @@
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/space-grotesk/400.css';
+@import '@fontsource/space-grotesk/500.css';
+@import '@fontsource/space-grotesk/600.css';
+@import '@fontsource/space-grotesk/700.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,7 +23,7 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
@@ -22,6 +31,11 @@ body {
   overflow-x: hidden;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -30,19 +44,29 @@ body {
   background: #f1f1f1;
 }
 
+.dark ::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
 ::-webkit-scrollbar-thumb {
   background: #ff6b35;
   border-radius: 4px;
 }
 
-button:focus,
-input:focus,
-textarea:focus,
-select:focus {
+::-webkit-scrollbar-thumb:hover {
+  background: #f04e1a;
+}
+
+/* Focus styles */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
   outline: 2px solid #ff6b35;
   outline-offset: 2px;
 }
 
+/* Animations */
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-20px); }
@@ -50,4 +74,48 @@ select:focus {
 
 .floating-element {
   animation: float 6s ease-in-out infinite;
+}
+
+/* Slick carousel customization */
+.testimonials-slider .slick-dots {
+  bottom: -40px;
+}
+
+.testimonials-slider .slick-dots li button:before {
+  font-size: 10px;
+  color: #ff6b35;
+}
+
+.testimonials-slider .slick-dots li.slick-active button:before {
+  color: #ff6b35;
+  opacity: 1;
+}
+
+.dark .testimonials-slider .slick-dots li button:before {
+  color: #ff8a66;
+}
+
+.dark .testimonials-slider .slick-dots li.slick-active button:before {
+  color: #ff8a66;
+}
+
+/* Dark mode support */
+.dark {
+  color-scheme: dark;
+}
+
+.dark body {
+  color: #e5e5e5;
+}
+
+/* Smooth transitions for theme switching */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Disable transitions on theme change for specific elements */
+.no-transition * {
+  transition: none !important;
 }
