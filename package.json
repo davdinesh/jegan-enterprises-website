@@ -2,7 +2,7 @@
   "name": "jegan-enterprises-website",
   "version": "1.0.0",
   "description": "Premium steel fabrication website for Jegan Enterprises",
-  "homepage": "https://yourusername.github.io/jegan-enterprises-website",
+  "homepage": "https://davdinesh.github.io/jegan-enterprises-website",
   "main": "src/index.js",
   "scripts": {
     "start": "react-scripts start",
