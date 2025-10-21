@@ -11,7 +11,6 @@ const Hero = lazy(() => import('./components/sections/Hero').then(module => ({ d
 const About = lazy(() => import('./components/sections/About').then(module => ({ default: module.About })));
 const Services = lazy(() => import('./components/sections/Services').then(module => ({ default: module.Services })));
 const Projects = lazy(() => import('./components/sections/Projects').then(module => ({ default: module.Projects })));
-const Testimonials = lazy(() => import('./components/sections/Testimonials').then(module => ({ default: module.Testimonials })));
 const Contact = lazy(() => import('./components/sections/Contact').then(module => ({ default: module.Contact })));
 
 // Loading fallback component
@@ -66,10 +65,6 @@ export default function App() {
 
           <Suspense fallback={<LoadingFallback />}>
             <Projects />
-          </Suspense>
-
-          <Suspense fallback={<LoadingFallback />}>
-            <Testimonials />
           </Suspense>
 
           <Suspense fallback={<LoadingFallback />}>

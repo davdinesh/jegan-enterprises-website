@@ -17,7 +17,6 @@ export const NAVIGATION_ITEMS = [
   { id: 'about', label: 'About' },
   { id: 'services', label: 'Services' },
   { id: 'projects', label: 'Projects' },
-  { id: 'testimonials', label: 'Testimonials' },
   { id: 'contact', label: 'Contact' },
 ];
 
@@ -121,45 +120,6 @@ export const PROJECTS = [
     description:
       'Specialized equipment components and assembly fixtures for various industrial applications and manufacturing lines.',
     category: 'custom',
-  },
-];
-
-export const TESTIMONIALS = [
-  {
-    id: 1,
-    name: 'Rajesh Kumar',
-    role: 'Factory Owner',
-    company: 'Chennai Manufacturing Ltd.',
-    content:
-      'Jegan Enterprises delivered exceptional quality for our manufacturing plant. Their attention to detail and timely delivery exceeded our expectations.',
-    rating: 5,
-  },
-  {
-    id: 2,
-    name: 'Priya Sharma',
-    role: 'Architect',
-    company: 'Modern Designs Studio',
-    content:
-      'Working with Jegan Enterprises was a pleasure. They brought our residential designs to life with precision and professionalism.',
-    rating: 5,
-  },
-  {
-    id: 3,
-    name: 'Mohammed Ali',
-    role: 'Restaurant Owner',
-    company: "Ali's Kitchen",
-    content:
-      'The stainless steel kitchen setup they provided is top-notch. Food-grade materials, perfect finish, and completed ahead of schedule!',
-    rating: 5,
-  },
-  {
-    id: 4,
-    name: 'Lakshmi Venkat',
-    role: 'Corporate Manager',
-    company: 'Tech Solutions Inc.',
-    content:
-      'Our office interior transformation was handled professionally. The steel and glass partitions are both functional and beautiful.',
-    rating: 5,
   },
 ];
 

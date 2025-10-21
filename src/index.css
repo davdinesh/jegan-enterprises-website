@@ -76,29 +76,6 @@ select:focus-visible {
   animation: float 6s ease-in-out infinite;
 }
 
-/* Slick carousel customization */
-.testimonials-slider .slick-dots {
-  bottom: -40px;
-}
-
-.testimonials-slider .slick-dots li button:before {
-  font-size: 10px;
-  color: #ff6b35;
-}
-
-.testimonials-slider .slick-dots li.slick-active button:before {
-  color: #ff6b35;
-  opacity: 1;
-}
-
-.dark .testimonials-slider .slick-dots li button:before {
-  color: #ff8a66;
-}
-
-.dark .testimonials-slider .slick-dots li.slick-active button:before {
-  color: #ff8a66;
-}
-
 /* Dark mode support */
 .dark {
   color-scheme: dark;
