@@ -1,0 +1,54 @@
+name: Deploy to GitHub Pages (Alternative)
+
+# This workflow avoids external actions and uses direct commands
+# Use this if you cannot enable external actions in repository settings
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        run: |
+          git clone --depth=1 https://github.com/${{ github.repository }}.git .
+          git checkout ${{ github.ref_name }}
+
+      - name: Setup Node.js 18
+        run: |
+          curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+          sudo apt-get install -y nodejs
+          node --version
+          npm --version
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build production bundle
+        run: npm run build
+        env:
+          CI: false
+
+      - name: Configure Git
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+
+      - name: Deploy to gh-pages branch
+        run: |
+          npx gh-pages -d build -m "Deploy: ${{ github.event.head_commit.message }} [skip ci]"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Deployment summary
+        run: |
+          echo "✅ Deployment completed successfully!"
+          echo "🌐 Site URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
+          echo "📦 Build folder deployed to gh-pages branch"
